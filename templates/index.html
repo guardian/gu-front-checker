@@ -1,0 +1,37 @@
+<html>
+<head>
+	<meta  http-equiv="refresh" content="60">
+	<style>
+		.front-preview {
+			border: none;
+		}
+		.uk-nf {
+			width: 75%;
+			height: 100%;
+			float:left;
+			margin-right: 1rem;
+		}
+		.ng-nf {
+			width: 22%;
+			height: 100%;
+			float:left;
+		}
+		.last-refresh {
+			display: block;
+			position: absolute;
+			bottom: 1.5rem;
+			left: 1rem;
+			background-color: white;
+			border: solid 1px #eee;
+			font-family: sans-serif;
+			font-size: 0.6rem;
+			padding: 0.5rem;
+		}
+	</style>
+</head>
+<body>
+	<iframe class="uk-nf front-preview" src="http://www.theguardian.com/{{section}}" seamless></iframe>
+	<iframe class="ng-nf front-preview" src="http://www.theguardian.com/{{section}}?view=mobile" seamless></iframe>
+	<time class="last-refresh">Loaded {{load_timestamp}}</time> 
+</body>
+</htmml>
