@@ -18,7 +18,44 @@ class MainHandler(webapp2.RequestHandler):
 
 		self.response.out.write(template.render(template_values))
 
+overview_circulator = {
+	"0" : {
+		"tl" : "http://www.bbc.co.uk/news/",
+		"tr" : "http://www.thetimes.co.uk/",
+		"bl" : "http://www.telegraph.co.uk",
+		"br" : "http://www.ft.com",
+	},
+	"1" : {
+		"tl" : "http://news.sky.com",
+		"tr" : "http://www.dailymail.co.uk/",
+		"bl" : "http://www.independent.co.uk",
+		"br" : "http://www.mirror.co.uk",
+	},
+	"2" : {
+		"tl" : "http://www.bostonglobe.com/",
+		"tr" : "http://www.cnn.com/",
+		"bl" : "http://www.nytimes.com/",
+		"br" : "http://www.aljazeera.com/",
+	},
+}
+
+class Circulator(webapp2.RequestHandler):
+	def get(self, page="0"):
+		template = jinja_environment.get_template('circulator.html')
+		
+		template_values = {
+			"load_timestamp" : datetime.datetime.now().strftime("%H:%M:%S %d/%m/%Y"),
+			"next_page" : (int(page) + 1) % len(overview_circulator)
+		}
+
+		template_values.update(overview_circulator[page])
+
+		self.response.out.write(template.render(template_values))
+
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
+    ('/circulator', Circulator),
+    ('/circulator/(\d)', Circulator),
     ('/(.+)', MainHandler)
 ], debug=True)

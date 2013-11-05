@@ -1,0 +1,46 @@
+<html>
+<head>
+	<meta  http-equiv="refresh" content="30;url=/circulator/{{next_page}}">
+	<style>
+		.preview {
+			border: none;
+			display: table-cell;
+			width: 50%;
+			height: 100%;
+		}
+
+		.last-refresh {
+			display: block;
+			position: absolute;
+			bottom: 1.5rem;
+			left: 1rem;
+			background-color: white;
+			border: solid 1px #eee;
+			font-family: sans-serif;
+			font-size: 0.6rem;
+			padding: 0.5rem;
+		}
+		.preview-frames {
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+		.l-top, .l-bottom {
+			display: table-row;
+		}
+	</style>
+</head>
+<body>
+	<div class="preview-frames">
+		<div class="l-top">
+			<iframe class="preview l-top-left" src="{{tl}}" seamless></iframe>
+			<iframe class="preview l-top-right" src="{{tr}}" seamless></iframe>
+		</div>
+		<div class="l-bottom">
+			<iframe class="preview l-bottom-left" src="{{bl}}" seamless></iframe>
+			<iframe class="preview l-bottom-right" src="{{br}}" seamless></iframe>
+		</div>
+	</div>
+	<time class="last-refresh">Loaded {{load_timestamp}}</time>
+</body>
+</htmml>
