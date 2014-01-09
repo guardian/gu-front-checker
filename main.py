@@ -26,16 +26,20 @@ overview_circulator = {
 		"br" : "http://www.ft.com",
 	},
 	"1" : {
-		"tl" : "http://news.sky.com",
+		"tl" : "http://m.sky.com/skynews/news",
 		"tr" : "http://www.dailymail.co.uk/",
-		"bl" : "http://www.independent.co.uk",
+		"bl" : "http://m.independent.co.uk",
 		"br" : "http://www.mirror.co.uk",
 	},
 	"2" : {
-		"tl" : "http://www.bostonglobe.com/",
+		"tl" : "http://www.nytimes.com/",
 		"tr" : "http://www.cnn.com/",
-		"bl" : "http://www.nytimes.com/",
+		"bl" : "http://www.bostonglobe.com/",
 		"br" : "http://www.aljazeera.com/",
+	},
+	"3" : {
+		"tl" : "http://www.theguardian.com/uk",
+		"tr" : "http://www.theguardian.com/uk?view=mobile",
 	},
 }
 

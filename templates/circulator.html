@@ -36,10 +36,12 @@
 			<iframe class="preview l-top-left" src="{{tl}}" seamless></iframe>
 			<iframe class="preview l-top-right" src="{{tr}}" seamless></iframe>
 		</div>
+		{% if bl and br %}
 		<div class="l-bottom">
 			<iframe class="preview l-bottom-left" src="{{bl}}" seamless></iframe>
 			<iframe class="preview l-bottom-right" src="{{br}}" seamless></iframe>
 		</div>
+		{% endif %}
 	</div>
 	<time class="last-refresh">Loaded {{load_timestamp}}</time>
 </body>
